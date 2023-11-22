@@ -83,9 +83,8 @@ app.get('/api/:status',async(req,res)=>{
     res.json(todos);
 })
 
-app.get('/*',async(req,res)=>{
-    res.sendFile(path.join(__dirname,'tododashboard','index.html'))
-    console.log(path.join(__dirname,'tododashboard','index.html'))
+app.get('/*',function(req,res){
+    res.sendFile(path.join(__dirname+'/tododashboard/index.html'))
 })
 
 app.listen(PORT,()=>{
